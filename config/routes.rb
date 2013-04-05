@@ -1,4 +1,7 @@
 Shakes::Application.routes.draw do
+  resources :plays
+
+
   resources :characters
 
 

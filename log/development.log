@@ -1,0 +1,1433 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (189.4ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (266.3ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateCharacters (20130405030658)
+  [1m[35m (225.7ms)[0m  CREATE TABLE `characters` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `gender` varchar(255), `ever_married` tinyint(1), `dies` tinyint(1), `murderer` tinyint(1), `ruler` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (54.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405030658')[0m
+  [1m[35m (0.4ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-04-04 23:17:04 -0400
+Connecting to database specified by database.yml
+Served asset /rails.png - 200 OK (3ms)
+
+
+Started GET "/characters" for 127.0.0.1 at 2013-04-04 23:17:10 -0400
+Processing by CharactersController#index as HTML
+  [1m[36mCharacter Load (0.5ms)[0m  [1mSELECT `characters`.* FROM `characters` [0m
+  Rendered characters/index.html.erb within layouts/application (2.1ms)
+Compiled characters.css  (29ms)  (pid 8502)
+Compiled scaffolds.css  (10ms)  (pid 8502)
+Compiled application.css  (45ms)  (pid 8502)
+Compiled jquery.js  (4ms)  (pid 8502)
+Compiled jquery_ujs.js  (0ms)  (pid 8502)
+Compiled characters.js  (163ms)  (pid 8502)
+Compiled application.js  (403ms)  (pid 8502)
+Completed 200 OK in 1086ms (Views: 840.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:17:11 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:17:11 -0400
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:17:11 -0400
+Served asset /characters.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:17:11 -0400
+Served asset /characters.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:17:11 -0400
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:17:11 -0400
+Served asset /application.js - 304 Not Modified (33ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:17:11 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/characters/new" for 127.0.0.1 at 2013-04-04 23:17:14 -0400
+Processing by CharactersController#new as HTML
+  Rendered characters/_form.html.erb (44.2ms)
+  Rendered characters/new.html.erb within layouts/application (67.7ms)
+Completed 500 Internal Server Error in 79ms
+
+ActionView::Template::Error (undefined method `name' for #<Character:0x007fa2d351aa68>):
+    13: 
+    14:   <div class="field">
+    15:     <%= f.label :name %><br />
+    16:     <%= f.text_field :name %>
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= f.label :gender %><br />
+  app/views/characters/_form.html.erb:16:in `block in _app_views_characters__form_html_erb___3482355622908837902_70168657138420'
+  app/views/characters/_form.html.erb:1:in `_app_views_characters__form_html_erb___3482355622908837902_70168657138420'
+  app/views/characters/new.html.erb:3:in `_app_views_characters_new_html_erb___1082114502586050614_70168656753380'
+  app/controllers/characters_controller.rb:29:in `new'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.8ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (163.0ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (263.9ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateCharacters (20130405031752)
+  [1m[35m (182.4ms)[0m  CREATE TABLE `characters` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (53.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405031752')[0m
+  [1m[35m (0.4ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+
+
+Started GET "/characters/new" for 127.0.0.1 at 2013-04-04 23:18:31 -0400
+Connecting to database specified by database.yml
+Processing by CharactersController#new as HTML
+  Rendered characters/_form.html.erb (6.5ms)
+  Rendered characters/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 78ms (Views: 60.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:31 -0400
+Served asset /application.css - 304 Not Modified (25ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:31 -0400
+Served asset /jquery.js - 304 Not Modified (43ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:32 -0400
+Served asset /characters.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:32 -0400
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:32 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:32 -0400
+Served asset /characters.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:32 -0400
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started POST "/characters" for 127.0.0.1 at 2013-04-04 23:18:34 -0400
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UMD5yBWUV3Ig12deE9BO2IgdUV3HWUcKxfW6Yyg/YAk=", "commit"=>"Create Character"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `characters` (`created_at`, `updated_at`) VALUES ('2013-04-05 03:18:34', '2013-04-05 03:18:34')
+  [1m[36m (68.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/characters/1
+Completed 302 Found in 110ms (ActiveRecord: 68.8ms)
+
+
+Started GET "/characters/1" for 127.0.0.1 at 2013-04-04 23:18:34 -0400
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCharacter Load (0.6ms)[0m  SELECT `characters`.* FROM `characters` WHERE `characters`.`id` = 1 LIMIT 1
+  Rendered characters/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 13ms (Views: 7.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:35 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:35 -0400
+Served asset /characters.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:35 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:35 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:35 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:35 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:35 -0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/characters" for 127.0.0.1 at 2013-04-04 23:18:38 -0400
+Processing by CharactersController#index as HTML
+  [1m[36mCharacter Load (0.7ms)[0m  [1mSELECT `characters`.* FROM `characters` [0m
+  Rendered characters/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 18ms (Views: 13.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:38 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:38 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:38 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:38 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:38 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:38 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:38 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/characters/1/edit" for 127.0.0.1 at 2013-04-04 23:18:39 -0400
+Processing by CharactersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCharacter Load (0.3ms)[0m  SELECT `characters`.* FROM `characters` WHERE `characters`.`id` = 1 LIMIT 1
+  Rendered characters/_form.html.erb (2.9ms)
+  Rendered characters/edit.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:39 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:39 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:39 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:39 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:39 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:39 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:39 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/characters" for 127.0.0.1 at 2013-04-04 23:18:41 -0400
+Processing by CharactersController#index as HTML
+  [1m[36mCharacter Load (0.1ms)[0m  [1mSELECT `characters`.* FROM `characters` [0m
+  Rendered characters/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:41 -0400
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:41 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:41 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:41 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:41 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:41 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:41 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/characters/1" for 127.0.0.1 at 2013-04-04 23:18:43 -0400
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCharacter Load (0.3ms)[0m  SELECT `characters`.* FROM `characters` WHERE `characters`.`id` = 1 LIMIT 1
+  Rendered characters/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:43 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:43 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:43 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:43 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:43 -0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:43 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:43 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/characters" for 127.0.0.1 at 2013-04-04 23:18:46 -0400
+Processing by CharactersController#index as HTML
+  [1m[36mCharacter Load (0.3ms)[0m  [1mSELECT `characters`.* FROM `characters` [0m
+  Rendered characters/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:46 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:46 -0400
+Served asset /characters.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:46 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:46 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:46 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:46 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:46 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/characters/new" for 127.0.0.1 at 2013-04-04 23:18:48 -0400
+Processing by CharactersController#new as HTML
+  Rendered characters/_form.html.erb (2.4ms)
+  Rendered characters/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 11ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:48 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:48 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:48 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:48 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:48 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:48 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:48 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started POST "/characters" for 127.0.0.1 at 2013-04-04 23:18:50 -0400
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UMD5yBWUV3Ig12deE9BO2IgdUV3HWUcKxfW6Yyg/YAk=", "commit"=>"Create Character"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `characters` (`created_at`, `updated_at`) VALUES ('2013-04-05 03:18:50', '2013-04-05 03:18:50')[0m
+  [1m[35m (95.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/characters/2
+Completed 302 Found in 101ms (ActiveRecord: 96.1ms)
+
+
+Started GET "/characters/2" for 127.0.0.1 at 2013-04-04 23:18:50 -0400
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCharacter Load (0.4ms)[0m  [1mSELECT `characters`.* FROM `characters` WHERE `characters`.`id` = 2 LIMIT 1[0m
+  Rendered characters/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:50 -0400
+Served asset /application.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:50 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:50 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:50 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:50 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:50 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:50 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/characters" for 127.0.0.1 at 2013-04-04 23:18:53 -0400
+Processing by CharactersController#index as HTML
+  [1m[35mCharacter Load (0.3ms)[0m  SELECT `characters`.* FROM `characters` 
+  Rendered characters/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:53 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:53 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:53 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:53 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:18:53 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:53 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:18:53 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (182.2ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (253.1ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateCharacters (20130405032229)
+  [1m[35m (190.4ms)[0m  CREATE TABLE `characters` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `gender` varchar(255), `ever_married` tinyint(1), `dies` tinyint(1), `murderer` tinyint(1), `ruler` tinyint(1), `aka` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (65.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405032229')[0m
+  [1m[35m (0.4ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+
+
+Started GET "/characters" for 127.0.0.1 at 2013-04-04 23:24:08 -0400
+Connecting to database specified by database.yml
+Processing by CharactersController#index as HTML
+  [1m[36mCharacter Load (0.5ms)[0m  [1mSELECT `characters`.* FROM `characters` [0m
+  Rendered characters/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 81ms (Views: 61.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:24:08 -0400
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:24:08 -0400
+Served asset /jquery.js - 304 Not Modified (29ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:24:08 -0400
+Served asset /characters.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:24:08 -0400
+Served asset /characters.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:24:08 -0400
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:24:08 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:24:08 -0400
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/characters/new" for 127.0.0.1 at 2013-04-04 23:24:10 -0400
+Processing by CharactersController#new as HTML
+  Rendered characters/_form.html.erb (9.3ms)
+  Rendered characters/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 28ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:24:10 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:24:10 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:24:10 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:24:10 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:24:10 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:24:10 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:24:10 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/characters" for 127.0.0.1 at 2013-04-04 23:24:32 -0400
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UMD5yBWUV3Ig12deE9BO2IgdUV3HWUcKxfW6Yyg/YAk=", "character"=>{"first_name"=>"Titus", "last_name"=>"Andronicus", "gender"=>"Male", "ever_married"=>"1", "dies"=>"1", "murderer"=>"1", "ruler"=>"0", "aka"=>""}, "commit"=>"Create Character"}
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `characters` (`aka`, `created_at`, `dies`, `ever_married`, `first_name`, `gender`, `last_name`, `murderer`, `ruler`, `updated_at`) VALUES ('', '2013-04-05 03:24:32', 1, 1, 'Titus', 'Male', 'Andronicus', 1, 0, '2013-04-05 03:24:32')[0m
+  [1m[35m (95.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/characters/1
+Completed 302 Found in 107ms (ActiveRecord: 96.5ms)
+
+
+Started GET "/characters/1" for 127.0.0.1 at 2013-04-04 23:24:32 -0400
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCharacter Load (0.7ms)[0m  [1mSELECT `characters`.* FROM `characters` WHERE `characters`.`id` = 1 LIMIT 1[0m
+  Rendered characters/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 15ms (Views: 11.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:24:32 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:24:32 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:24:32 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:24:32 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:24:32 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:24:32 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:24:32 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/characters" for 127.0.0.1 at 2013-04-04 23:24:36 -0400
+Processing by CharactersController#index as HTML
+  [1m[35mCharacter Load (0.7ms)[0m  SELECT `characters`.* FROM `characters` 
+  Rendered characters/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:24:36 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:24:36 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:24:36 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:24:36 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:24:36 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:24:36 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:24:36 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/characters/new" for 127.0.0.1 at 2013-04-04 23:24:40 -0400
+Processing by CharactersController#new as HTML
+  Rendered characters/_form.html.erb (11.0ms)
+  Rendered characters/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:24:40 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:24:40 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:24:40 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:24:40 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:24:40 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:24:40 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:24:40 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/characters" for 127.0.0.1 at 2013-04-04 23:24:59 -0400
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UMD5yBWUV3Ig12deE9BO2IgdUV3HWUcKxfW6Yyg/YAk=", "character"=>{"first_name"=>"Hamlet", "last_name"=>"", "gender"=>"Male", "ever_married"=>"0", "dies"=>"1", "murderer"=>"1", "ruler"=>"0", "aka"=>""}, "commit"=>"Create Character"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `characters` (`aka`, `created_at`, `dies`, `ever_married`, `first_name`, `gender`, `last_name`, `murderer`, `ruler`, `updated_at`) VALUES ('', '2013-04-05 03:24:59', 1, 0, 'Hamlet', 'Male', '', 1, 0, '2013-04-05 03:24:59')
+  [1m[36m (97.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/characters/2
+Completed 302 Found in 102ms (ActiveRecord: 97.7ms)
+
+
+Started GET "/characters/2" for 127.0.0.1 at 2013-04-04 23:25:00 -0400
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCharacter Load (0.4ms)[0m  SELECT `characters`.* FROM `characters` WHERE `characters`.`id` = 2 LIMIT 1
+  Rendered characters/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:25:00 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:25:00 -0400
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:25:00 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:25:00 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:25:00 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:25:00 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:25:00 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/characters" for 127.0.0.1 at 2013-04-04 23:25:03 -0400
+Processing by CharactersController#index as HTML
+  [1m[36mCharacter Load (0.5ms)[0m  [1mSELECT `characters`.* FROM `characters` [0m
+  Rendered characters/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:25:03 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:25:03 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:25:03 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:25:03 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:25:03 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:25:03 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:25:03 -0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/characters/new" for 127.0.0.1 at 2013-04-04 23:25:05 -0400
+Processing by CharactersController#new as HTML
+  Rendered characters/_form.html.erb (5.9ms)
+  Rendered characters/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 14ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:25:05 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:25:05 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:25:05 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:25:05 -0400
+Served asset /application.css - 304 Not Modified (34ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:25:05 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:25:05 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:25:05 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started POST "/characters" for 127.0.0.1 at 2013-04-04 23:25:22 -0400
+Processing by CharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UMD5yBWUV3Ig12deE9BO2IgdUV3HWUcKxfW6Yyg/YAk=", "character"=>{"first_name"=>"Polonius", "last_name"=>"", "gender"=>"Male", "ever_married"=>"0", "dies"=>"1", "murderer"=>"0", "ruler"=>"0", "aka"=>""}, "commit"=>"Create Character"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `characters` (`aka`, `created_at`, `dies`, `ever_married`, `first_name`, `gender`, `last_name`, `murderer`, `ruler`, `updated_at`) VALUES ('', '2013-04-05 03:25:22', 1, 0, 'Polonius', 'Male', '', 0, 0, '2013-04-05 03:25:22')[0m
+  [1m[35m (119.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/characters/3
+Completed 302 Found in 123ms (ActiveRecord: 120.3ms)
+
+
+Started GET "/characters/3" for 127.0.0.1 at 2013-04-04 23:25:22 -0400
+Processing by CharactersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCharacter Load (0.3ms)[0m  [1mSELECT `characters`.* FROM `characters` WHERE `characters`.`id` = 3 LIMIT 1[0m
+  Rendered characters/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:25:22 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:25:22 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:25:22 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:25:22 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:25:22 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:25:22 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:25:22 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/characters" for 127.0.0.1 at 2013-04-04 23:25:27 -0400
+Processing by CharactersController#index as HTML
+  [1m[35mCharacter Load (0.6ms)[0m  SELECT `characters`.* FROM `characters` 
+  Rendered characters/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:25:27 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:25:27 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:25:27 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:25:27 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:25:27 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:25:27 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:25:27 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateCharacters (20130405032229)
+Migrating to CreatePlays (20130405032723)
+  [1m[35m (168.5ms)[0m  CREATE TABLE `plays` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `subtitle` varchar(255), `description` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (108.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405032723')[0m
+  [1m[35m (0.4ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+
+
+Started GET "/plays" for 127.0.0.1 at 2013-04-04 23:30:30 -0400
+Connecting to database specified by database.yml
+Processing by PlaysController#index as HTML
+  [1m[36mPlay Load (0.5ms)[0m  [1mSELECT `plays`.* FROM `plays` [0m
+  Rendered plays/index.html.erb within layouts/application (1.6ms)
+Compiled plays.css  (3ms)  (pid 5677)
+Compiled application.css  (7ms)  (pid 5677)
+Compiled plays.js  (138ms)  (pid 5677)
+Compiled application.js  (147ms)  (pid 5677)
+Completed 200 OK in 239ms (Views: 197.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:30:31 -0400
+Served asset /application.css - 304 Not Modified (43ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:30:31 -0400
+Served asset /characters.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/plays.css?body=1" for 127.0.0.1 at 2013-04-04 23:30:31 -0400
+Served asset /plays.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:30:31 -0400
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:30:31 -0400
+Served asset /characters.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:30:31 -0400
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:30:31 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/plays.js?body=1" for 127.0.0.1 at 2013-04-04 23:30:31 -0400
+Served asset /plays.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:30:31 -0400
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/plays/new" for 127.0.0.1 at 2013-04-04 23:30:34 -0400
+Processing by PlaysController#new as HTML
+  Rendered plays/_form.html.erb (8.0ms)
+  Rendered plays/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 52ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:30:34 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:30:34 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plays.css?body=1" for 127.0.0.1 at 2013-04-04 23:30:34 -0400
+Served asset /plays.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:30:34 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:30:34 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:30:34 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:30:34 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:30:34 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plays.js?body=1" for 127.0.0.1 at 2013-04-04 23:30:34 -0400
+Served asset /plays.js - 304 Not Modified (0ms)
+
+
+Started POST "/plays" for 127.0.0.1 at 2013-04-04 23:32:38 -0400
+Processing by PlaysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UMD5yBWUV3Ig12deE9BO2IgdUV3HWUcKxfW6Yyg/YAk=", "play"=>{"name"=>"Hamlet", "subtitle"=>"Prince of Denmark", "description"=>"Hamlet is upset and shit get fucked up."}, "commit"=>"Create Play"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `plays` (`created_at`, `description`, `name`, `subtitle`, `updated_at`) VALUES ('2013-04-05 03:32:38', 'Hamlet is upset and shit get fucked up.', 'Hamlet', 'Prince of Denmark', '2013-04-05 03:32:38')[0m
+  [1m[35m (128.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/plays/1
+Completed 302 Found in 138ms (ActiveRecord: 129.4ms)
+
+
+Started GET "/plays/1" for 127.0.0.1 at 2013-04-04 23:32:39 -0400
+Processing by PlaysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlay Load (0.6ms)[0m  [1mSELECT `plays`.* FROM `plays` WHERE `plays`.`id` = 1 LIMIT 1[0m
+  Rendered plays/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 16ms (Views: 9.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:32:39 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:32:39 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:32:39 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plays.css?body=1" for 127.0.0.1 at 2013-04-04 23:32:39 -0400
+Served asset /plays.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:32:39 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plays.js?body=1" for 127.0.0.1 at 2013-04-04 23:32:39 -0400
+Served asset /plays.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:32:39 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:32:39 -0400
+Served asset /application.js - 304 Not Modified (32ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:32:39 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/plays" for 127.0.0.1 at 2013-04-04 23:32:46 -0400
+Processing by PlaysController#index as HTML
+  [1m[35mPlay Load (0.4ms)[0m  SELECT `plays`.* FROM `plays` 
+  Rendered plays/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:32:46 -0400
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:32:46 -0400
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:32:46 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/plays.css?body=1" for 127.0.0.1 at 2013-04-04 23:32:46 -0400
+Served asset /plays.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:32:46 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:32:46 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:32:46 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plays.js?body=1" for 127.0.0.1 at 2013-04-04 23:32:46 -0400
+Served asset /plays.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:32:46 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/plays/new" for 127.0.0.1 at 2013-04-04 23:32:47 -0400
+Processing by PlaysController#new as HTML
+  Rendered plays/_form.html.erb (2.6ms)
+  Rendered plays/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:32:47 -0400
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/plays.css?body=1" for 127.0.0.1 at 2013-04-04 23:32:47 -0400
+Served asset /plays.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:32:47 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:32:47 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:32:47 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:32:47 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:32:47 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plays.js?body=1" for 127.0.0.1 at 2013-04-04 23:32:47 -0400
+Served asset /plays.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:32:47 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/plays" for 127.0.0.1 at 2013-04-04 23:35:22 -0400
+Processing by PlaysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UMD5yBWUV3Ig12deE9BO2IgdUV3HWUcKxfW6Yyg/YAk=", "play"=>{"name"=>"Othello", "subtitle"=>"Moor of Venice", "description"=>"Othello is married, then he isn't."}, "commit"=>"Create Play"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `plays` (`created_at`, `description`, `name`, `subtitle`, `updated_at`) VALUES ('2013-04-05 03:35:22', 'Othello is married, then he isn\'t.', 'Othello', 'Moor of Venice', '2013-04-05 03:35:22')
+  [1m[36m (132.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/plays/2
+Completed 302 Found in 136ms (ActiveRecord: 132.5ms)
+
+
+Started GET "/plays/2" for 127.0.0.1 at 2013-04-04 23:35:22 -0400
+Processing by PlaysController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPlay Load (0.5ms)[0m  SELECT `plays`.* FROM `plays` WHERE `plays`.`id` = 2 LIMIT 1
+  Rendered plays/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:35:22 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plays.css?body=1" for 127.0.0.1 at 2013-04-04 23:35:22 -0400
+Served asset /plays.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:35:22 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:35:22 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:35:22 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:35:22 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:35:22 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plays.js?body=1" for 127.0.0.1 at 2013-04-04 23:35:22 -0400
+Served asset /plays.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:35:22 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/plays/2/edit" for 127.0.0.1 at 2013-04-04 23:35:26 -0400
+Processing by PlaysController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlay Load (0.4ms)[0m  [1mSELECT `plays`.* FROM `plays` WHERE `plays`.`id` = 2 LIMIT 1[0m
+  Rendered plays/_form.html.erb (4.7ms)
+  Rendered plays/edit.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 19ms (Views: 15.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:35:26 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:35:26 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:35:26 -0400
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/plays.css?body=1" for 127.0.0.1 at 2013-04-04 23:35:26 -0400
+Served asset /plays.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:35:26 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:35:26 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:35:26 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plays.js?body=1" for 127.0.0.1 at 2013-04-04 23:35:26 -0400
+Served asset /plays.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:35:26 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/plays" for 127.0.0.1 at 2013-04-04 23:35:30 -0400
+Processing by PlaysController#index as HTML
+  [1m[35mPlay Load (0.6ms)[0m  SELECT `plays`.* FROM `plays` 
+  Rendered plays/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:35:30 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plays.css?body=1" for 127.0.0.1 at 2013-04-04 23:35:30 -0400
+Served asset /plays.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:35:30 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:35:30 -0400
+Served asset /characters.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:35:30 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:35:30 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:35:30 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/plays.js?body=1" for 127.0.0.1 at 2013-04-04 23:35:30 -0400
+Served asset /plays.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:35:30 -0400
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/plays/new" for 127.0.0.1 at 2013-04-04 23:35:32 -0400
+Processing by PlaysController#new as HTML
+  Rendered plays/_form.html.erb (2.1ms)
+  Rendered plays/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 37ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:35:32 -0400
+Served asset /scaffolds.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:35:32 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:35:32 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:35:32 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:35:32 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plays.css?body=1" for 127.0.0.1 at 2013-04-04 23:35:32 -0400
+Served asset /plays.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:35:32 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plays.js?body=1" for 127.0.0.1 at 2013-04-04 23:35:32 -0400
+Served asset /plays.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:35:32 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/plays" for 127.0.0.1 at 2013-04-04 23:36:19 -0400
+Processing by PlaysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UMD5yBWUV3Ig12deE9BO2IgdUV3HWUcKxfW6Yyg/YAk=", "play"=>{"name"=>"Pericles", "subtitle"=>"Prince of Tyre", "description"=>"Never heard of this one... might be good."}, "commit"=>"Create Play"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `plays` (`created_at`, `description`, `name`, `subtitle`, `updated_at`) VALUES ('2013-04-05 03:36:19', 'Never heard of this one... might be good.', 'Pericles', 'Prince of Tyre', '2013-04-05 03:36:19')
+  [1m[36m (143.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/plays/3
+Completed 302 Found in 148ms (ActiveRecord: 144.1ms)
+
+
+Started GET "/plays/3" for 127.0.0.1 at 2013-04-04 23:36:20 -0400
+Processing by PlaysController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPlay Load (0.3ms)[0m  SELECT `plays`.* FROM `plays` WHERE `plays`.`id` = 3 LIMIT 1
+  Rendered plays/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:36:20 -0400
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:36:20 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:36:20 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:36:20 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:36:20 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/plays.css?body=1" for 127.0.0.1 at 2013-04-04 23:36:20 -0400
+Served asset /plays.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:36:20 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plays.js?body=1" for 127.0.0.1 at 2013-04-04 23:36:20 -0400
+Served asset /plays.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:36:20 -0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/plays" for 127.0.0.1 at 2013-04-04 23:36:23 -0400
+Processing by PlaysController#index as HTML
+  [1m[36mPlay Load (0.6ms)[0m  [1mSELECT `plays`.* FROM `plays` [0m
+  Rendered plays/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:36:23 -0400
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:36:23 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:36:23 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:36:23 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:36:23 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plays.css?body=1" for 127.0.0.1 at 2013-04-04 23:36:23 -0400
+Served asset /plays.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:36:23 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plays.js?body=1" for 127.0.0.1 at 2013-04-04 23:36:23 -0400
+Served asset /plays.js - 304 Not Modified (29ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:36:23 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/plays" for 127.0.0.1 at 2013-04-04 23:37:13 -0400
+Processing by PlaysController#index as HTML
+  [1m[35mPlay Load (0.1ms)[0m  SELECT `plays`.* FROM `plays` 
+  Rendered plays/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 23:37:13 -0400
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-04 23:37:13 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plays.css?body=1" for 127.0.0.1 at 2013-04-04 23:37:13 -0400
+Served asset /plays.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-04 23:37:13 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-04 23:37:13 -0400
+Served asset /characters.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-04 23:37:13 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-04 23:37:13 -0400
+Served asset /characters.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plays.js?body=1" for 127.0.0.1 at 2013-04-04 23:37:13 -0400
+Served asset /plays.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 23:37:13 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateCharacters (20130405032229)
+Migrating to CreatePlays (20130405032723)
+Migrating to CreateUsers (20130405034339)
+  [1m[35m (122.8ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `email` varchar(255), `password` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (87.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405034339')[0m
+  [1m[35m (0.4ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 

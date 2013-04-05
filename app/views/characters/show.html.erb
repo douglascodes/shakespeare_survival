@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @character.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @character.last_name %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @character.gender %>
+</p>
+
+<p>
+  <b>Ever married:</b>
+  <%= @character.ever_married %>
+</p>
+
+<p>
+  <b>Dies:</b>
+  <%= @character.dies %>
+</p>
+
+<p>
+  <b>Murderer:</b>
+  <%= @character.murderer %>
+</p>
+
+<p>
+  <b>Ruler:</b>
+  <%= @character.ruler %>
+</p>
+
+<p>
+  <b>Aka:</b>
+  <%= @character.aka %>
+</p>
+
+
+<%= link_to 'Edit', edit_character_path(@character) %> |
+<%= link_to 'Back', characters_path %>

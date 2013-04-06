@@ -1431,3 +1431,261 @@ Migrating to CreateUsers (20130405034339)
   [1m[35m (122.8ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `email` varchar(255), `password` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
   [1m[36m (87.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405034339')[0m
   [1m[35m (0.4ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+
+
+Started GET "/plays" for 127.0.0.1 at 2013-04-05 02:18:04 -0400
+Connecting to database specified by database.yml
+Processing by PlaysController#index as HTML
+  [1m[36mPlay Load (0.2ms)[0m  [1mSELECT `plays`.* FROM `plays` [0m
+  Rendered plays/index.html.erb within layouts/application (4.3ms)
+Compiled users.css  (3ms)  (pid 11832)
+Compiled application.css  (7ms)  (pid 11832)
+Compiled users.js  (108ms)  (pid 11832)
+Compiled application.js  (113ms)  (pid 11832)
+Completed 200 OK in 216ms (Views: 194.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-04-05 02:18:04 -0400
+Served asset /users.css - 200 OK (4ms)
+
+
+Started GET "/assets/characters.css?body=1" for 127.0.0.1 at 2013-04-05 02:18:04 -0400
+Served asset /characters.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-04-05 02:18:04 -0400
+Served asset /users.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-05 02:18:04 -0400
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-05 02:18:04 -0400
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/plays.css?body=1" for 127.0.0.1 at 2013-04-05 02:18:04 -0400
+Served asset /plays.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-05 02:18:04 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-05 02:18:04 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/characters.js?body=1" for 127.0.0.1 at 2013-04-05 02:18:04 -0400
+Served asset /characters.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/plays.js?body=1" for 127.0.0.1 at 2013-04-05 02:18:04 -0400
+Served asset /plays.js - 304 Not Modified (31ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-05 02:18:04 -0400
+Served asset /application.js - 304 Not Modified (6ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36mPlay Load (0.4ms)[0m  [1mSELECT `plays`.* FROM `plays` WHERE `plays`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` LIMIT 1
+  [1m[36mPlay Load (0.7ms)[0m  [1mSELECT `plays`.* FROM `plays` LIMIT 1[0m
+  [1m[35mPlay Load (0.4ms)[0m  SELECT `plays`.* FROM `plays` 
+  [1m[36mPlay Load (0.4ms)[0m  [1mSELECT `plays`.* FROM `plays` [0m
+  [1m[35mPlay Load (0.4ms)[0m  SELECT `plays`.* FROM `plays` 
+  [1m[36mPlay Load (0.4ms)[0m  [1mSELECT `plays`.* FROM `plays` [0m
+  [1m[35mPlay Load (0.4ms)[0m  SELECT `plays`.* FROM `plays` LIMIT 1
+  [1m[36mPlay Load (0.4ms)[0m  [1mSELECT `plays`.* FROM `plays` WHERE `plays`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.9ms)[0m  [1mUPDATE `plays` SET `subtitle` = 'Hamlet is a piece of shit', `updated_at` = '2013-04-05 17:59:08' WHERE `plays`.`id` = 1[0m
+  [1m[35m (302.3ms)[0m  COMMIT
+  [1m[36mPlay Load (0.7ms)[0m  [1mSELECT `plays`.* FROM `plays` WHERE `plays`.`id` = 1 LIMIT 1[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (0.8ms)[0m  DROP DATABASE IF EXISTS `shakes_test`
+  [1m[36m (0.4ms)[0m  [1mCREATE DATABASE `shakes_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (189.3ms)[0m  CREATE TABLE `characters` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `gender` varchar(255), `ever_married` tinyint(1), `dies` tinyint(1), `murderer` tinyint(1), `ruler` tinyint(1), `aka` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (118.8ms)[0m  [1mCREATE TABLE `plays` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `subtitle` varchar(255), `description` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (143.1ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `email` varchar(255), `password` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (119.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (208.9ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (64.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20130405034339')
+  [1m[36m (65.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20130405032723')[0m
+  [1m[35m (65.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20130405032229')
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (272.3ms)[0m  DROP DATABASE IF EXISTS `shakes_test`
+  [1m[36m (0.2ms)[0m  [1mCREATE DATABASE `shakes_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (143.8ms)[0m  CREATE TABLE `characters` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `gender` varchar(255), `ever_married` tinyint(1), `dies` tinyint(1), `murderer` tinyint(1), `ruler` tinyint(1), `aka` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (130.5ms)[0m  [1mCREATE TABLE `plays` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `subtitle` varchar(255), `description` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (108.8ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `email` varchar(255), `password` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (119.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (233.1ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.5ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (73.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20130405034339')
+  [1m[36m (54.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20130405032723')[0m
+  [1m[35m (54.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20130405032229')
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateCharacters (20130405032229)
+Migrating to CreatePlays (20130405032723)
+Migrating to CreateUsers (20130405034339)
+Migrating to AddIndexToUsersEmail (20130405231638)
+  [1m[35m (362.5ms)[0m  CREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)
+  [1m[36m (65.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405231638')[0m
+  [1m[35m (0.5ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateCharacters (20130405032229)
+Migrating to CreatePlays (20130405032723)
+Migrating to CreateUsers (20130405034339)
+Migrating to AddIndexToUsersEmail (20130405231638)
+Migrating to RemovePasswordFromUsers (20130406062836)
+  [1m[35m (467.4ms)[0m  ALTER TABLE `users` DROP `password`
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateCharacters (20130405032229)
+Migrating to CreatePlays (20130405032723)
+Migrating to CreateUsers (20130405034339)
+Migrating to AddIndexToUsersEmail (20130405231638)
+Migrating to RemovePasswordFromUsers (20130406062836)
+  [1m[35m (0.6ms)[0m  ALTER TABLE `users` DROP `password`
+Mysql2::Error: Can't DROP 'password'; check that column/key exists: ALTER TABLE `users` DROP `password`
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateCharacters (20130405032229)
+Migrating to CreatePlays (20130405032723)
+Migrating to CreateUsers (20130405034339)
+Migrating to AddIndexToUsersEmail (20130405231638)
+Migrating to RemovePasswordFromUsers (20130406062836)
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateCharacters (20130405032229)
+Migrating to CreatePlays (20130405032723)
+Migrating to CreateUsers (20130405034339)
+Migrating to AddIndexToUsersEmail (20130405231638)
+Migrating to RemovePasswordFromUsers (20130406062836)
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateCharacters (20130405032229)
+Migrating to CreatePlays (20130405032723)
+Migrating to CreateUsers (20130405034339)
+Migrating to AddIndexToUsersEmail (20130405231638)
+Migrating to RemovePasswordFromUsers (20130406062836)
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateCharacters (20130405032229)
+Migrating to CreatePlays (20130405032723)
+Migrating to CreateUsers (20130405034339)
+Migrating to AddIndexToUsersEmail (20130405231638)
+Migrating to RemovePasswordFromUsers (20130406062836)
+Connecting to database specified by database.yml
+  [1m[36m (188.6ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (209.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateCharacters (20130405032229)
+  [1m[35m (203.4ms)[0m  CREATE TABLE `characters` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `gender` varchar(255), `ever_married` tinyint(1), `dies` tinyint(1), `murderer` tinyint(1), `ruler` tinyint(1), `aka` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (75.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405032229')[0m
+Migrating to CreatePlays (20130405032723)
+  [1m[35m (240.8ms)[0m  CREATE TABLE `plays` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `subtitle` varchar(255), `description` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (76.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405032723')[0m
+Migrating to CreateUsers (20130405034339)
+  [1m[35m (241.8ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `email` varchar(255), `password` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (65.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405034339')[0m
+Migrating to AddIndexToUsersEmail (20130405231638)
+  [1m[35m (339.8ms)[0m  CREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)
+  [1m[36m (66.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405231638')[0m
+Migrating to RemovePasswordFromUsers (20130406062836)
+Connecting to database specified by database.yml
+  [1m[36m (184.0ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (220.3ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateCharacters (20130405032229)
+  [1m[35m (211.6ms)[0m  CREATE TABLE `characters` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `gender` varchar(255), `ever_married` tinyint(1), `dies` tinyint(1), `murderer` tinyint(1), `ruler` tinyint(1), `aka` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (76.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405032229')[0m
+Migrating to CreatePlays (20130405032723)
+  [1m[35m (241.7ms)[0m  CREATE TABLE `plays` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `subtitle` varchar(255), `description` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (76.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405032723')[0m
+Migrating to CreateUsers (20130405034339)
+  [1m[35m (241.1ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `email` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (241.8ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405034339')[0m
+Migrating to AddIndexToUsersEmail (20130405231638)
+  [1m[35m (562.4ms)[0m  CREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)
+  [1m[36m (54.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405231638')[0m
+Migrating to RemovePasswordFromUsers (20130406062836)
+Connecting to database specified by database.yml
+  [1m[36m (175.2ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (220.3ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateCharacters (20130405032229)
+  [1m[35m (210.9ms)[0m  CREATE TABLE `characters` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `gender` varchar(255), `ever_married` tinyint(1), `dies` tinyint(1), `murderer` tinyint(1), `ruler` tinyint(1), `aka` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (65.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405032229')[0m
+Migrating to CreatePlays (20130405032723)
+  [1m[35m (230.7ms)[0m  CREATE TABLE `plays` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `subtitle` varchar(255), `description` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (65.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405032723')[0m
+Migrating to CreateUsers (20130405034339)
+  [1m[35m (229.8ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `email` varchar(255), `password_digest` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (65.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405034339')[0m
+Migrating to AddIndexToUsersEmail (20130405231638)
+  [1m[35m (319.3ms)[0m  CREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)
+  [1m[36m (76.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405231638')[0m
+Migrating to RemovePasswordFromUsers (20130406062836)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (174.1ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (210.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateCharacters (20130405032229)
+  [1m[35m (309.0ms)[0m  CREATE TABLE `characters` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `gender` varchar(255), `ever_married` tinyint(1), `dies` tinyint(1), `murderer` tinyint(1), `ruler` tinyint(1), `aka` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (164.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405032229')[0m
+Migrating to CreatePlays (20130405032723)
+  [1m[35m (383.7ms)[0m  CREATE TABLE `plays` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `subtitle` varchar(255), `description` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (89.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405032723')[0m
+Migrating to CreateUsers (20130405034339)
+  [1m[35m (240.8ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `email` varchar(255), `password_digest` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (76.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405034339')[0m
+Migrating to AddIndexToUsersEmail (20130405231638)
+  [1m[35m (296.7ms)[0m  CREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)
+  [1m[36m (54.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130405231638')[0m
+Migrating to RemovePasswordFromUsers (20130406062836)
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateCharacters (20130405032229)
+Migrating to CreatePlays (20130405032723)
+Migrating to CreateUsers (20130405034339)
+Migrating to AddIndexToUsersEmail (20130405231638)
+  [1m[35m (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (0.5ms)[0m  DROP DATABASE IF EXISTS `shakes_test`
+  [1m[36m (0.4ms)[0m  [1mCREATE DATABASE `shakes_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (201.4ms)[0m  CREATE TABLE `characters` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `gender` varchar(255), `ever_married` tinyint(1), `dies` tinyint(1), `murderer` tinyint(1), `ruler` tinyint(1), `aka` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (154.2ms)[0m  [1mCREATE TABLE `plays` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `subtitle` varchar(255), `description` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (129.5ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `email` varchar(255), `password_digest` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (209.3ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (119.1ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (220.5ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (74.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20130405231638')[0m
+  [1m[35m (76.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20130405032723')
+  [1m[36m (76.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20130405034339')[0m
+  [1m[35m (76.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20130405032229')
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml

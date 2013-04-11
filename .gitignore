@@ -2,3 +2,7 @@
 ./tmp/**/*
 ./log/**/*
 ./bundle
+.project
+*.swp
+*~
+bundler_stubs/

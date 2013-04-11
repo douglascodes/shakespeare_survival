@@ -30,5 +30,7 @@ group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'guard-rspec'
+  gem 'spork-rails'
   gem 'selenium-webdriver'
+
 end

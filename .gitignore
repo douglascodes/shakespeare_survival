@@ -1,4 +1,4 @@
-./doc/
-./tmp/*/*.*
-./log/*.log
+./doc/**/*
+./tmp/**/*
+./log/**/*
 ./bundle
